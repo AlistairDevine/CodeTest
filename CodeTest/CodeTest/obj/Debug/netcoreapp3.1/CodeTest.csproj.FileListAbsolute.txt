@@ -18,3 +18,5 @@ C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\CodeTest\obj\Debug\ne
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.dll
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.pdb
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.genruntimeconfig.cache
+C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\CodeTest\bin\Debug\netcoreapp3.1\data\albums.json
+C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\CodeTest\bin\Debug\netcoreapp3.1\data\photos.json
