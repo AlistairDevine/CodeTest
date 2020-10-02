@@ -25,8 +25,18 @@ namespace CodeTest.Controllers
             return FileService.GetAlbums();
         }
         //GET Photo data
+        [HttpGet("/photos")]
+        public IEnumerable<PhotoModel> GetPhotos()
+        {
+            return FileService.GetPhotos();
+        }
 
         //GET User by Id
+        [HttpGet("/1")]
+        public IActionResult GetById([FromQuery] int id)
+        {
+            return Ok(FileService.GetUserById(id));
+        }
         //Query albums to that user and photos
 
         //Reference: https://www.youtube.com/watch?v=oPKq9fNJ6c0&list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy&index=9
