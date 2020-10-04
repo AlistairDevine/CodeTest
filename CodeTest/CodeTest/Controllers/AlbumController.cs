@@ -18,27 +18,32 @@ namespace CodeTest.Controllers
             this.FileService = fileService;
         }
         public JsonFileService FileService { get; }
+
+        List<AlbumModel> albums = new List<AlbumModel>();
+
         //GET Album data
-        [HttpGet("/albums")]
+        [HttpGet("/album")]
         public IEnumerable<AlbumModel> GetAlbums()
         {
             return FileService.GetAlbums();
         }
         //GET Photo data
-        [HttpGet("/photos")]
+        [HttpGet("/photo")]
         public IEnumerable<PhotoModel> GetPhotos()
         {
             return FileService.GetPhotos();
         }
-
         //GET User by Id
-        [HttpGet("/1")]
-        public IActionResult GetById([FromQuery] int id)
+        [HttpGet("{id}")]
+        public IEnumerable<string> GetById(int Id)
         {
-            return Ok(FileService.GetUserById(id));
+            return FileService.GetUserById(Id);
         }
         //Query albums to that user and photos
-
-        //Reference: https://www.youtube.com/watch?v=oPKq9fNJ6c0&list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy&index=9
+        [HttpGet("/info/{id}")]
+        public IEnumerable<string> GetAlbumsPhotos(int Id)
+        {
+            return FileService.GetAlbumsPhotos(Id);
+        }
     }
 }

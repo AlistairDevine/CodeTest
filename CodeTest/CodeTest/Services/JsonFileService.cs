@@ -1,10 +1,12 @@
 ﻿using CodeTest.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing.Template;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -18,8 +20,9 @@ namespace CodeTest.Services
             WebHostEnvironment = webHostEnvironment;
         }
         public IWebHostEnvironment WebHostEnvironment { get; }
+
         //Grabbing the Album JSON data from the file.
-        private string JsonFileNameAlbum
+        public string JsonFileNameAlbum
         {
             get { return Path.Combine(WebHostEnvironment.ContentRootPath, "data", "albums.json"); }
         }
@@ -48,24 +51,10 @@ namespace CodeTest.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns>Album Title data only, ordered by UserId.</returns>
-        public void GetUserById(int userId)
+        public IEnumerable<string> GetUserById(int userId)
         {
-            var users = GetAlbums();
-
-            var query = users
-                        .Where(x => x.UserId == userId)
-                        .Select(i => i.AlbumId);
-
-            if(query.UserId == null)
-            {
-                //No matches of any albums owned by that user.
-            }
-            else
-            {
-                var userAlbums = query.AlbumTitle.ToList();
-                //If album title then grab photos from json of that album
-
-            }
+            return GetAlbums().Where(x => x.UserId == userId)
+                              .Select(i => i.AlbumTitle);
         }
         /// <summary>
         /// Photo JSON data (No Filters)
@@ -85,5 +74,40 @@ namespace CodeTest.Services
 
         //All Data (Album & Photo)
         //Concatination process???
+        public IEnumerable<string> GetAlbumsPhotos(int userId)
+        {
+            //Single string with separators for individual element for the single
+            
+            //.ToString method required
+
+            IEnumerable<int> albumIdQuery = new List<int>();
+            IEnumerable<string> albumQuery = new List<string>(); 
+            IEnumerable<string> photoQuery = new List<string>();
+
+            //Change string Json property names before creating string Json
+            //foreach loop???
+
+            //Create tests for this method!!!!!!!
+
+            //Gets all albumId s' from elements that userId match the Id inputted.
+            albumIdQuery = GetAlbums().Where(x => x.UserId == userId)
+                       .Select(i => i.AlbumId);
+            //Gets all album Titles from Json album that userId matches the Id inputted.
+            albumQuery = GetAlbums().Where(l => l.UserId == userId)
+                       .Select(m => m.AlbumTitle);
+
+            //each albumId collected from Album JSON, 
+            //photoQuery collects Photo Titles that hold AblumId (Photo JSON file) matches the AlbumId from the Album JSON file.
+            //Adds all of the Photo Titles into the end of albumQuery List of strings.
+            foreach (var albumId in albumIdQuery)
+            {
+                photoQuery = GetPhotos().Where(y => y.AlbumId == albumId)
+                            .Select(y => y.PhotoTitle);
+                albumQuery.ToList().AddRange(photoQuery);
+            }
+            //Output the albumQuery list (Collection of users: Album Titles and Photo Titles).
+            return albumQuery;
+            
+        }
     }
 }
