@@ -19,27 +19,29 @@ namespace CodeTest.Controllers
         }
         public JsonFileService FileService { get; }
 
-        List<AlbumModel> albums = new List<AlbumModel>();
-
         //GET Album data
+        //Route, /ablum
         [HttpGet("/album")]
         public IEnumerable<AlbumModel> GetAlbums()
         {
             return FileService.GetAlbums();
         }
         //GET Photo data
+        //Route, /photo
         [HttpGet("/photo")]
         public IEnumerable<PhotoModel> GetPhotos()
         {
             return FileService.GetPhotos();
         }
         //GET User by Id
+        //Route, /Id e.g. /1
         [HttpGet("{id}")]
         public IEnumerable<string> GetById(int Id)
         {
             return FileService.GetUserById(Id);
         }
-        //Query albums to that user and photos
+        //GET user albums and photos
+        //Route, /info/Id e.g. /info/2
         [HttpGet("/info/{id}")]
         public IEnumerable<string> GetAlbumsPhotos(int Id)
         {

@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Routing.Template;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -83,11 +85,10 @@ namespace CodeTest.Services
             IEnumerable<int> albumIdQuery = new List<int>();
             IEnumerable<string> albumQuery = new List<string>(); 
             IEnumerable<string> photoQuery = new List<string>();
+            IEnumerable<int> photoIdQuery = new List<int>();
 
-            //Change string Json property names before creating string Json
-            //foreach loop???
-
-            //Create tests for this method!!!!!!!
+            var result = new StringBuilder();
+            List<int> results = new List<int>();
 
             //Gets all albumId s' from elements that userId match the Id inputted.
             albumIdQuery = GetAlbums().Where(x => x.UserId == userId)
@@ -95,18 +96,34 @@ namespace CodeTest.Services
             //Gets all album Titles from Json album that userId matches the Id inputted.
             albumQuery = GetAlbums().Where(l => l.UserId == userId)
                        .Select(m => m.AlbumTitle);
-
             //each albumId collected from Album JSON, 
             //photoQuery collects Photo Titles that hold AblumId (Photo JSON file) matches the AlbumId from the Album JSON file.
             //Adds all of the Photo Titles into the end of albumQuery List of strings.
-            foreach (var albumId in albumIdQuery)
+            photoIdQuery = GetPhotos().Select(y => y.AlbumId);
+
+            foreach(var album in albumIdQuery)
             {
-                photoQuery = GetPhotos().Where(y => y.AlbumId == albumId)
-                            .Select(y => y.PhotoTitle);
-                albumQuery.ToList().AddRange(photoQuery);
+                foreach(var photo in photoIdQuery)
+                {
+                    if(photoIdQuery.Contains(album))
+                    {
+                        result.Append(photo);
+                    }
+                }
             }
+            if (result == null)
+            {
+                return null;
+            }
+
+            //photoQuery
+            photoQuery = GetPhotos().Where(y => y.AlbumId.ToString() == result.ToString())
+                                    .Select(y => y.PhotoTitle);
+
+            albumQuery.ToList().AddRange(photoQuery);
+
             //Output the albumQuery list (Collection of users: Album Titles and Photo Titles).
-            return albumQuery;
+            return photoQuery;
             
         }
     }
