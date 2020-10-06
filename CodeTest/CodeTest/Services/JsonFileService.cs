@@ -74,13 +74,24 @@ namespace CodeTest.Services
             }
         }
 
-        //All Data (Album & Photo)
+        /// <summary>
+        /// Photo JSON album data (Filter)
+        /// </summary>
+        /// <param name="albumId"></param>
+        /// <returns>Photo Title data, ordered by AlbumId</returns>
+        public IEnumerable<string> GetAlbumPhotosById(int albumId)
+        {
+            return GetPhotos().Where(x => x.AlbumId == albumId)
+                               .Select(i => i.PhotoTitle);
+        }
+
         //Concatination process???
-        public IEnumerable<string> GetAlbumsPhotos(int userId)
+        //.ToString method required???
+
+        //All Data (Album & Photo)
+        public string GetAlbumsPhotos(int userId)
         {
             //Single string with separators for individual element for the single
-            
-            //.ToString method required
 
             IEnumerable<int> albumIdQuery = new List<int>();
             IEnumerable<string> albumQuery = new List<string>(); 
@@ -111,6 +122,7 @@ namespace CodeTest.Services
                     }
                 }
             }
+            //If no intersection between the two JSON file is found.
             if (result == null)
             {
                 return null;
@@ -123,7 +135,7 @@ namespace CodeTest.Services
             albumQuery.ToList().AddRange(photoQuery);
 
             //Output the albumQuery list (Collection of users: Album Titles and Photo Titles).
-            return photoQuery;
+            return result.ToString();
             
         }
     }

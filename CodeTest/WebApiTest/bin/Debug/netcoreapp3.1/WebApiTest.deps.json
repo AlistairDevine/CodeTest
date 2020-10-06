@@ -11,6 +11,7 @@
           "CodeTest": "1.0.0",
           "MSTest.TestAdapter": "2.1.0",
           "MSTest.TestFramework": "2.1.0",
+          "Microsoft.AspNetCore.TestHost": "3.1.8",
           "Microsoft.NET.Test.Sdk": "16.5.0",
           "coverlet.collector": "1.2.0",
           "xunit.extensibility.execution": "2.4.1"
@@ -20,6 +21,17 @@
         }
       },
       "coverlet.collector/1.2.0": {},
+      "Microsoft.AspNetCore.TestHost/3.1.8": {
+        "dependencies": {
+          "System.IO.Pipelines": "4.7.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.TestHost.dll": {
+            "assemblyVersion": "3.1.8.0",
+            "fileVersion": "3.100.820.42106"
+          }
+        }
+      },
       "Microsoft.CodeCoverage/16.5.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -662,6 +674,14 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.IO.Pipelines/4.7.2": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "4.0.2.1",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      },
       "System.Linq/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -1124,6 +1144,13 @@
       "path": "coverlet.collector/1.2.0",
       "hashPath": "coverlet.collector.1.2.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.TestHost/3.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3w8+1Q/2LW8gCSknp59wcdV1mke0nyawbbc5ntP6w5sX5bfA/fjvEAktr42bh7Dcb4RyVVPxKpEdU/AsQPYR5A==",
+      "path": "microsoft.aspnetcore.testhost/3.1.8",
+      "hashPath": "microsoft.aspnetcore.testhost.3.1.8.nupkg.sha512"
+    },
     "Microsoft.CodeCoverage/16.5.0": {
       "type": "package",
       "serviceable": true,
@@ -1466,6 +1493,13 @@
       "sha512": "sha512-6QOb2XFLch7bEc4lIcJH49nJN2HV+OC3fHDgsLVsBVBk3Y4hFAnOBGzJ2lUu7CyDDFo9IBWkSsnbkT6IBwwiMw==",
       "path": "system.io.filesystem.primitives/4.3.0",
       "hashPath": "system.io.filesystem.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.IO.Pipelines/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rGIIhoY3lUdn9rWeuGdgeZZ0P+SpJ1wZI5g8TnXqgvuhFgUP7iP9Nt5FZebYInQZQxqnwjPxdYYBE5l/8PJmqQ==",
+      "path": "system.io.pipelines/4.7.2",
+      "hashPath": "system.io.pipelines.4.7.2.nupkg.sha512"
     },
     "System.Linq/4.3.0": {
       "type": "package",

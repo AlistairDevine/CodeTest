@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using CodeTest.Models;
 using CodeTest.Services;
@@ -22,7 +23,7 @@ namespace CodeTest.Controllers
         //GET Album data
         //Route, /ablum
         [HttpGet("/album")]
-        public IEnumerable<AlbumModel> GetAlbums()
+        public IEnumerable<AlbumModel> GetAlbumsController()
         {
             return FileService.GetAlbums();
         }
@@ -40,10 +41,18 @@ namespace CodeTest.Controllers
         {
             return FileService.GetUserById(Id);
         }
+        //Get Album by Id
+        //Route, //Id e.g. /5
+        [HttpGet("{id}")]
+        public IEnumerable<string>GetAlbumById(int Id)
+        {
+            return FileService.GetAlbumPhotosById(Id);
+        }
+        
         //GET user albums and photos
         //Route, /info/Id e.g. /info/2
         [HttpGet("/info/{id}")]
-        public IEnumerable<string> GetAlbumsPhotos(int Id)
+        public string GetAlbumsPhotos(int Id)
         {
             return FileService.GetAlbumsPhotos(Id);
         }

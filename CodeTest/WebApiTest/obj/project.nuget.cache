@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hoEQP4+q8Gq/qxTw2FAapQmO0wLS/aagcKxADt7U5MoIpfCJC/nk8oMJ06mP3PFrSJ858H1O0UvQrcFgi5SAdA==",
+  "dgSpecHash": "l889D6SahxQ6KgLWYJh24RNOk6w6UhhP039aYAkl/fmGG+f1itkX95Zw+OA7kbWASVyZ69gSjUPCZtPHP6EnKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\WebApiTest\\WebApiTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alist\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
+    "C:\\Users\\alist\\.nuget\\packages\\microsoft.aspnetcore.testhost\\3.1.8\\microsoft.aspnetcore.testhost.3.1.8.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
@@ -54,6 +55,7 @@
     "C:\\Users\\alist\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\alist\\.nuget\\packages\\system.io.pipelines\\4.7.2\\system.io.pipelines.4.7.2.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",

@@ -100,6 +100,8 @@ C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\bin\Debug\
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\bin\Debug\netcoreapp3.1\CodeTest.dll
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\bin\Debug\netcoreapp3.1\CodeTest.pdb
-C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.csproj.CoreCompileInputs.cache
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.dll
 C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.pdb
+C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.TestHost.dll
+C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\alist\OneDrive\Documents\GitHub\CodeTest\CodeTest\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.csproj.CoreCompileInputs.cache
