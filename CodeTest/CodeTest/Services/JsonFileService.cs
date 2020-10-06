@@ -89,7 +89,7 @@ namespace CodeTest.Services
         //.ToString method required???
 
         //All Data (Album & Photo)
-        public string GetAlbumsPhotos(int userId)
+        public IEnumerable<string> GetAlbumsPhotos(int userId)
         {
             //Single string with separators for individual element for the single
 
@@ -135,7 +135,7 @@ namespace CodeTest.Services
             albumQuery.ToList().AddRange(photoQuery);
 
             //Output the albumQuery list (Collection of users: Album Titles and Photo Titles).
-            return result.ToString();
+            return albumQuery;
             
         }
     }

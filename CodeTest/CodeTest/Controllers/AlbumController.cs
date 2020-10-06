@@ -52,7 +52,7 @@ namespace CodeTest.Controllers
         //GET user albums and photos
         //Route, /info/Id e.g. /info/2
         [HttpGet("/info/{id}")]
-        public string GetAlbumsPhotos(int Id)
+        public IEnumerable<string> GetAlbumsPhotos(int Id)
         {
             return FileService.GetAlbumsPhotos(Id);
         }
