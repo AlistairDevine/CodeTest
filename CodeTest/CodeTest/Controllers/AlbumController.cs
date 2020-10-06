@@ -35,15 +35,15 @@ namespace CodeTest.Controllers
             return FileService.GetPhotos();
         }
         //GET User by Id
-        //Route, /Id e.g. /1
+        //Route, album/Id e.g. album/1
         [HttpGet("{id}")]
         public IEnumerable<string> GetById(int Id)
         {
             return FileService.GetUserById(Id);
         }
         //Get Album by Id
-        //Route, //Id e.g. /5
-        [HttpGet("{id}")]
+        //Route, /photo/Id e.g. /photo/5
+        [HttpGet("/photo/{id}")]
         public IEnumerable<string>GetAlbumById(int Id)
         {
             return FileService.GetAlbumPhotosById(Id);
