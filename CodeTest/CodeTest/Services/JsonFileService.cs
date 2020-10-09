@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace CodeTest.Services
 {
-    public class JsonFileService
+    public class JsonFileService : IJsonFileService
     {
         public JsonFileService(IWebHostEnvironment webHostEnvironment)
         {
@@ -94,7 +94,7 @@ namespace CodeTest.Services
             //Single string with separators for individual element for the single
 
             IEnumerable<int> albumIdQuery = new List<int>();
-            IEnumerable<string> albumQuery = new List<string>(); 
+            IEnumerable<string> albumQuery = new List<string>();
             IEnumerable<string> photoQuery = new List<string>();
             IEnumerable<int> photoIdQuery = new List<int>();
 
@@ -112,11 +112,11 @@ namespace CodeTest.Services
             //Adds all of the Photo Titles into the end of albumQuery List of strings.
             photoIdQuery = GetPhotos().Select(y => y.AlbumId);
 
-            foreach(var album in albumIdQuery)
+            foreach (var album in albumIdQuery)
             {
-                foreach(var photo in photoIdQuery)
+                foreach (var photo in photoIdQuery)
                 {
-                    if(photoIdQuery.Contains(album))
+                    if (photoIdQuery.Contains(album))
                     {
                         result.Append(photo);
                     }
@@ -136,7 +136,7 @@ namespace CodeTest.Services
 
             //Output the albumQuery list (Collection of users: Album Titles and Photo Titles).
             return albumQuery;
-            
+
         }
     }
 }

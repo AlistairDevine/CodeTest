@@ -31,7 +31,7 @@ namespace CodeTest
         {
             services.AddControllers();
             services.AddControllers();
-            services.AddTransient<JsonFileService>();
+            services.AddScoped<IJsonFileService, JsonFileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

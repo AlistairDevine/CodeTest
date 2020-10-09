@@ -14,39 +14,39 @@ namespace CodeTest.Controllers
     [ApiController]
     public class AlbumController : ControllerBase
     {
-        public AlbumController(JsonFileService fileService)
+        private readonly IJsonFileService _fileService;
+        public AlbumController(IJsonFileService fileService)
         {
-            this.FileService = fileService;
+            _fileService = fileService;
         }
-        public JsonFileService FileService { get; }
 
         //GET Album data
         //Route, /ablum
         [HttpGet("/album")]
         public IEnumerable<AlbumModel> GetAlbumsController()
         {
-            return FileService.GetAlbums();
+            return _fileService.GetAlbums();
         }
         //GET Photo data
         //Route, /photo
         [HttpGet("/photo")]
         public IEnumerable<PhotoModel> GetPhotos()
         {
-            return FileService.GetPhotos();
+            return _fileService.GetPhotos();
         }
         //GET User by Id
         //Route, album/Id e.g. album/1
         [HttpGet("{id}")]
         public IEnumerable<string> GetById(int Id)
         {
-            return FileService.GetUserById(Id);
+            return _fileService.GetUserById(Id);
         }
         //Get Album by Id
         //Route, /photo/Id e.g. /photo/5
         [HttpGet("/photo/{id}")]
         public IEnumerable<string>GetAlbumById(int Id)
         {
-            return FileService.GetAlbumPhotosById(Id);
+            return _fileService.GetAlbumPhotosById(Id);
         }
         
         //GET user albums and photos
@@ -54,7 +54,7 @@ namespace CodeTest.Controllers
         [HttpGet("/info/{id}")]
         public IEnumerable<string> GetAlbumsPhotos(int Id)
         {
-            return FileService.GetAlbumsPhotos(Id);
+            return _fileService.GetAlbumsPhotos(Id);
         }
     }
 }
