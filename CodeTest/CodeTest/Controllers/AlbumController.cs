@@ -23,9 +23,9 @@ namespace CodeTest.Controllers
         //GET Album data
         //Route, /ablum
         [HttpGet("/album")]
-        public IEnumerable<AlbumModel> GetAlbumsController()
+        public ActionResult<IEnumerable<AlbumModel>> GetAlbumsController()
         {
-            return _fileService.GetAlbums();
+            return Ok(_fileService.GetAlbums());
         }
         //GET Photo data
         //Route, /photo
