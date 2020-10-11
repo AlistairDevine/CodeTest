@@ -79,7 +79,7 @@ namespace ApiTesting
         //Place within a different method.
         //GetById
         [Fact]
-        public void GetAlbumById_ReturnsRightItem()
+        public void GetAlbumById_ReturnRightItem()
         {
             //Arrange
             //var testId = new AlbumModel().AlbumId = 1;

@@ -1,6 +1,7 @@
 ﻿using CodeTest.Controllers;
 using CodeTest.Models;
 using CodeTest.Services;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,28 @@ namespace ApiTesting
         }
         [Fact]
         public void GetAllPhotos()
+        {
+            //Arrange
+            //Action
+            //Assert
+        }
+        [Fact]
+        public void GetAllPhotoItems_ReturnNumberOfItems()
+        {
+            //Action
+            var okResult = _photoController.GetPhotos().Result as OkObjectResult;
+            //Assert
+            var items = Assert.IsType<List<PhotoModel>>(okResult.Value);
+            Assert.Equal(1, items.Count);
+        }
+        [Fact]
+        public void GetAllPhotosType_ReturnOkStatusCodeType()
+        {
+            //Assert
+            Assert.IsType<OkObjectResult>(_photoController.GetPhotos().Result);
+        }
+        [Fact]
+        public void GetPhotoById_ReturnRightItem()
         {
             //Arrange
             //Action

@@ -30,9 +30,9 @@ namespace CodeTest.Controllers
         //GET Photo data
         //Route, /photo
         [HttpGet("/photo")]
-        public IEnumerable<PhotoModel> GetPhotos()
+        public ActionResult<IEnumerable<PhotoModel>> GetPhotos()
         {
-            return _fileService.GetPhotos();
+            return Ok(_fileService.GetPhotos());
         }
         //GET User by Id
         //Route, album/Id e.g. album/1
