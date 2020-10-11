@@ -13,7 +13,7 @@ using Xunit;
 
 namespace ApiTesting
 {
-    public class ApiTests
+    public class AlbumApiTests
     {
         //Reference: https://dev.to/masanori_msl/asp-net-core-xunit-moq-add-unit-tests-1-26c8
 
@@ -27,7 +27,7 @@ namespace ApiTesting
         */
 
         private readonly AlbumController _albumController;
-        public ApiTests()
+        public AlbumApiTests()
         {
             var albumMock = new Mock<IJsonFileService>();
             albumMock.Setup(p => p.GetAlbums())
@@ -42,14 +42,10 @@ namespace ApiTesting
                 });
             _albumController = new AlbumController(albumMock.Object);
         }
-
+        //Place within a method.
         [Fact]
-        public void GetAllAlbums_ShouldNotBeNull()
+        public void GetAllAlbums_ReturnNotBeNull()
         {
-            //Setup
-
-            //Action
-
             //Assert
             Assert.True(_albumController.GetAlbumsController() != null);
         }
@@ -57,13 +53,16 @@ namespace ApiTesting
         public void GetAllAblums()
         {
             //Action
-            var page = _albumController.GetAlbumsController();
-            var viewResult = Assert.IsType<ViewResult>(page);
+            var albumResult = _albumController.GetAlbumsController();
+            //var viewResult = Assert.IsType<ViewResult>(albumResult);
+            string albumTitle = "MockAlbumTitle";
             //Assert
-            Assert.Equal("1", viewResult.ViewData["AlbumId"].ToString());
+            //Assert.Equal("MockAlbumTitle", viewResult.Model.ToString());
+            //Assert.Equal(albumTitle, albumResult.Split()[0]);
+            Assert.Contains(albumTitle, albumResult.ToString());
         }
         [Fact]
-        public void GetAllAlbumsItem_Should()
+        public void GetAllAlbumsItem_ReturnNumberOfItemsGathered()
         {
             //Action
             var okResult = _albumController.GetAlbumsController().Result as OkObjectResult;
@@ -72,10 +71,30 @@ namespace ApiTesting
             Assert.Equal(1, items.Count);
         }
         [Fact]
-        public void GetAllAlbumsType_Should()
+        public void GetAllAlbumsType_ReturnOkStatusCodeType()
         {
             //StatusCode test
-            Assert.IsType<OkObjectResult>(_albumController.GetAlbumsController().GetType());
+            Assert.IsType<OkObjectResult>(_albumController.GetAlbumsController().Result);
         }
+        //Place within a different method.
+        //GetById
+        [Fact]
+        public void GetAlbumById_ReturnsRightItem()
+        {
+            //Arrange
+            //var testId = new AlbumModel().AlbumId = 1;
+            var testId = new AlbumModel()
+            {
+                AlbumId = 1,
+                AlbumTitle = "TestByIdTitle",
+                UserId = 2
+            };
+            //Action
+            var okResult = _albumController.GetAlbumById(1).Result as OkObjectResult;
+            //Assert
+            Assert.IsType<string[]>(okResult.Value);
+            Assert.Equal(testId.AlbumId, (okResult.Value as AlbumModel).AlbumId);
+        }
+
     }
 }

@@ -37,14 +37,14 @@ namespace CodeTest.Controllers
         //GET User by Id
         //Route, album/Id e.g. album/1
         [HttpGet("{id}")]
-        public IEnumerable<string> GetById(int Id)
+        public ActionResult<IEnumerable<string>> GetAlbumById(int Id)
         {
-            return _fileService.GetUserById(Id);
+            return Ok(_fileService.GetUserById(Id));
         }
         //Get Album by Id
         //Route, /photo/Id e.g. /photo/5
         [HttpGet("/photo/{id}")]
-        public IEnumerable<string>GetAlbumById(int Id)
+        public IEnumerable<string>GetAlbumPhotosById(int Id)
         {
             return _fileService.GetAlbumPhotosById(Id);
         }
