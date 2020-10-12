@@ -37,13 +37,6 @@ namespace ApiTesting
             Assert.True(_photoController.GetPhotos() != null);
         }
         [Fact]
-        public void GetAllPhotos()
-        {
-            //Arrange
-            //Action
-            //Assert
-        }
-        [Fact]
         public void GetAllPhotoItems_ReturnNumberOfItems()
         {
             //Action

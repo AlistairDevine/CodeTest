@@ -44,7 +44,7 @@ namespace CodeTest.Controllers
         //Get Album by Id
         //Route, /photo/Id e.g. /photo/5
         [HttpGet("/photo/{id}")]
-        public IEnumerable<string>GetAlbumPhotosById(int Id)
+        public IEnumerable<string>GetPhotosById(int Id)
         {
             return _fileService.GetAlbumPhotosById(Id);
         }

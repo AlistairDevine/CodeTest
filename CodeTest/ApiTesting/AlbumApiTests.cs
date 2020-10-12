@@ -15,17 +15,6 @@ namespace ApiTesting
 {
     public class AlbumApiTests
     {
-        //Reference: https://dev.to/masanori_msl/asp-net-core-xunit-moq-add-unit-tests-1-26c8
-
-        /*Support references: 
-         * testing environment code https://raaaimund.github.io/tech/2019/05/08/aspnet-core-integration-testing/
-         * Assert examples http://dontcodetired.com/blog
-         * msDocs https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices
-         * typeof  https://stackoverflow.com/questions/22362634/correct-way-to-unit-test-the-type-of-an-object 
-         * Assert structure https://code-maze.com/unit-testing-aspnetcore-web-api/
-         *      https://docs.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
-        */
-
         private readonly AlbumController _albumController;
         public AlbumApiTests()
         {
@@ -50,18 +39,6 @@ namespace ApiTesting
             Assert.True(_albumController.GetAlbumsController() != null);
         }
         [Fact]
-        public void GetAllAblums()
-        {
-            //Action
-            var albumResult = _albumController.GetAlbumsController();
-            //var viewResult = Assert.IsType<ViewResult>(albumResult);
-            string albumTitle = "MockAlbumTitle";
-            //Assert
-            //Assert.Equal("MockAlbumTitle", viewResult.Model.ToString());
-            //Assert.Equal(albumTitle, albumResult.Split()[0]);
-            Assert.Contains(albumTitle, albumResult.ToString());
-        }
-        [Fact]
         public void GetAllAlbumsItem_ReturnNumberOfItemsGathered()
         {
             //Action
@@ -82,18 +59,17 @@ namespace ApiTesting
         public void GetAlbumById_ReturnRightItem()
         {
             //Arrange
-            //var testId = new AlbumModel().AlbumId = 1;
-            var testId = new AlbumModel()
-            {
-                AlbumId = 1,
-                AlbumTitle = "TestByIdTitle",
-                UserId = 2
-            };
+            //(TestingCoding)var testId = new AlbumModel().AlbumId = 1;
+            int expected = 1;
+            int Id = 1;
+            
             //Action
-            var okResult = _albumController.GetAlbumById(1).Result as OkObjectResult;
+            //var okResult = _albumController.GetAlbumById(testById.UserId).Result as OkObjectResult;
+            var Result = _albumController.GetAlbumById(Id);
+            
             //Assert
-            Assert.IsType<string[]>(okResult.Value);
-            Assert.Equal(testId.AlbumId, (okResult.Value as AlbumModel).AlbumId);
+            //Assert.IsType<string[]>(okResult.Value);
+            Assert.Equal(expected, (Result.Value as AlbumModel).AlbumId);
         }
 
     }
