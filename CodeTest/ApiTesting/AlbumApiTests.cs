@@ -53,6 +53,10 @@ namespace ApiTesting
             //StatusCode test
             Assert.IsType<OkObjectResult>(_albumController.GetAlbumsController().Result);
         }
+        
+        //ERROR method!!!
+        //Wrong output.
+        
         //Place within a different method.
         //GetById
         [Fact]

@@ -85,6 +85,9 @@ namespace CodeTest.Services
                                .Select(i => i.PhotoTitle);
         }
 
+        //ERROR method!!!
+        //Only outputs album titles, not both album & photo titles.
+
         //Concatination process???
         //.ToString method required???
 
