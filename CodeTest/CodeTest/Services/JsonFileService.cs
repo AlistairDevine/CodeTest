@@ -135,7 +135,8 @@ namespace CodeTest.Services
 
             //Output the albumQuery list (Collection of users: Album Titles and Photo Titles).
             return resultString;
-
         }
+
+        //Reference notes: https://www.stevejgordon.co.uk/introduction-to-benchmarking-csharp-code-with-benchmark-dot-net
     }
 }

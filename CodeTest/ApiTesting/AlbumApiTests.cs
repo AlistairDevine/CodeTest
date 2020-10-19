@@ -15,6 +15,10 @@ namespace ApiTesting
 {
     public class AlbumApiTests
     {
+        //xUnit testing example: https://www.codemotion.com/magazine/dev-hub/backend-dev/testing-your-c-code-with-xunit/#introducing-xunit
+        //Intergration testing reference: https://auth0.com/blog/xunit-to-test-csharp-code/#Introducing-Integration-Tests
+        //Research: https://specflow.org/getting-started/
+
         private readonly AlbumController _albumController;
         public AlbumApiTests()
         {
