@@ -85,60 +85,56 @@ namespace CodeTest.Services
                                .Select(i => i.PhotoTitle);
         }
 
-        //ERROR method!!!
-        //Only outputs album titles, not both album & photo titles.
-
-        //Concatination process???
-        //.ToString method required???
-
-        //All Data (Album & Photo)
-        public IEnumerable<string> GetAlbumsPhotos(int userId)
+        /// <summary>
+        /// Albums and Photos linked to a user id number.
+        /// </summary>
+        /// <param name="userId">User input id number</param>
+        /// <returns>Albums and photos joined together.</returns>
+        public string GetAlbumsPhotos(int userId)
         {
-            //Single string with separators for individual element for the single
-
+            //Types of queries used.
             IEnumerable<int> albumIdQuery = new List<int>();
             IEnumerable<string> albumQuery = new List<string>();
             IEnumerable<string> photoQuery = new List<string>();
             IEnumerable<int> photoIdQuery = new List<int>();
-
+            //photoTitle results.
             var result = new StringBuilder();
-            List<int> results = new List<int>();
 
             //Gets all albumId s' from elements that userId match the Id inputted.
             albumIdQuery = GetAlbums().Where(x => x.UserId == userId)
                        .Select(i => i.AlbumId);
+
             //Gets all album Titles from Json album that userId matches the Id inputted.
             albumQuery = GetAlbums().Where(l => l.UserId == userId)
                        .Select(m => m.AlbumTitle);
-            //each albumId collected from Album JSON, 
-            //photoQuery collects Photo Titles that hold AblumId (Photo JSON file) matches the AlbumId from the Album JSON file.
-            //Adds all of the Photo Titles into the end of albumQuery List of strings.
-            photoIdQuery = GetPhotos().Select(y => y.AlbumId);
+            //Get all PhotoId's from when AlbumId is the same Id that the user inputted.
+            photoIdQuery = GetPhotos().Where(x => x.AlbumId == userId)
+                       .Select(i => i.PhotoId);
 
-            foreach (var album in albumIdQuery)
+            //Grabbing the photo titles that match with the photoId in photoIdQuery.
+            photoQuery = GetPhotos().Where(l => l.PhotoId.ToString() == photoIdQuery.ToString())
+                                    .Select(y => y.PhotoTitle);
+            //Matching photoId with the photoTitles
+            foreach(var photo in GetPhotos())
             {
-                foreach (var photo in photoIdQuery)
+                foreach(var photo2 in photoIdQuery)
                 {
-                    if (photoIdQuery.Contains(album))
+                    if(photo2.ToString() == photo.PhotoId.ToString())
                     {
-                        result.Append(photo);
+                        result.Append(photo.PhotoTitle);
                     }
                 }
             }
-            //If no intersection between the two JSON file is found.
-            if (result == null)
-            {
-                return null;
-            }
 
-            //photoQuery
-            photoQuery = GetPhotos().Where(y => y.AlbumId.ToString() == result.ToString())
-                                    .Select(y => y.PhotoTitle);
+            //Correct formatting for the output from the method!!!
 
-            albumQuery.ToList().AddRange(photoQuery);
+            //Joining the album and photo queries together.
+            string resultString = string.Join(", ", albumQuery);
+            string resultPhoto = string.Join(", ", result);
+            resultString = resultString + resultPhoto;
 
             //Output the albumQuery list (Collection of users: Album Titles and Photo Titles).
-            return albumQuery;
+            return resultString;
 
         }
     }

@@ -11,7 +11,7 @@ namespace CodeTest.Services
 
         IEnumerable<string> GetAlbumPhotosById(int albumId);
         IEnumerable<AlbumModel> GetAlbums();
-        IEnumerable<string> GetAlbumsPhotos(int userId);
+        string GetAlbumsPhotos(int userId);
         IEnumerable<PhotoModel> GetPhotos();
         IEnumerable<string> GetUserById(int userId);
     }

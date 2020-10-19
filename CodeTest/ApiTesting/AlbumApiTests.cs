@@ -27,6 +27,12 @@ namespace ApiTesting
                         AlbumId = 1,
                         UserId = 1,
                         AlbumTitle = "MockAlbumTitle"
+                    },
+                    new AlbumModel
+                    {
+                        AlbumId = 2,
+                        UserId = 2,
+                        AlbumTitle = "AlbumTestTwo"
                     }
                 });
             _albumController = new AlbumController(albumMock.Object);
@@ -75,6 +81,12 @@ namespace ApiTesting
             //Assert.IsType<string[]>(okResult.Value);
             Assert.Equal(expected, (Result.Value as AlbumModel).AlbumId);
         }
-
+        [Fact]
+        public void GetAlbumsPhotos_ReturnRightItemValue()
+        {
+            //Arrange
+            //Action
+            //Assert
+        }
     }
 }
