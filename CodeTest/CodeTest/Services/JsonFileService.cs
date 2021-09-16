@@ -1,4 +1,5 @@
 ﻿using CodeTest.Models;
+using Microsoft.AspNet.SignalR.Client.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing.Template;
 using Microsoft.Extensions.Configuration;
@@ -7,6 +8,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -17,11 +20,13 @@ namespace CodeTest.Services
 {
     public class JsonFileService : IJsonFileService
     {
-        public JsonFileService(IWebHostEnvironment webHostEnvironment)
+        public IWebHostEnvironment WebHostEnvironment { get; }
+        private readonly HttpClient _httpClient;
+        public JsonFileService(IWebHostEnvironment webHostEnvironment, HttpClient httpClient)
         {
             WebHostEnvironment = webHostEnvironment;
+            _httpClient = httpClient;
         }
-        public IWebHostEnvironment WebHostEnvironment { get; }
 
         //Grabbing the Album JSON data from the file.
         public string JsonFileNameAlbum
@@ -33,6 +38,17 @@ namespace CodeTest.Services
         {
             get { return Path.Combine(WebHostEnvironment.ContentRootPath, "data", "photos.json"); }
         }
+        //Grabbing the Albums JSON data from the url address
+        public async Task<AlbumModel[]> GetAlbumsUrl()
+        {
+            return await _httpClient.GetFromJsonAsync<AlbumModel[]>("http://jsonplaceholder.typicode.com/albums");
+        }
+        //Grabbing the Photos JSON data from the url address
+        public async Task<PhotoModel[]> GetPhotosUrl()
+        {
+            return await _httpClient.GetFromJsonAsync<PhotoModel[]>("http://jsonplaceholder.typicode.com/photos");
+        }
+
         /// <summary>
         /// Album JSON data (No filter)
         /// </summary>

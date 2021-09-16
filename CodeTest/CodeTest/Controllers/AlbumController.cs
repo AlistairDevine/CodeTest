@@ -27,6 +27,13 @@ namespace CodeTest.Controllers
         {
             return Ok(_fileService.GetAlbums());
         }
+        //GET Album data
+        //Route, /ablumsurl
+        [HttpGet("/albumsurl")]
+        public async Task<AlbumModel[]> GetUrlAlbumsController()
+        {
+            return await _fileService.GetAlbumsUrl();
+        }
         //GET Photo data
         //Route, /photo
         [HttpGet("/photo")]
@@ -34,6 +41,14 @@ namespace CodeTest.Controllers
         {
             return Ok(_fileService.GetPhotos());
         }
+        //GET Photos data
+        //Route, /photosurl
+        [HttpGet("/photosurl")]
+        public async Task<PhotoModel[]> GetUrlPhotosController()
+        {
+            return await _fileService.GetPhotosUrl();
+        }
+
         //GET User by Id
         //Route, album/Id e.g. album/1
         [HttpGet("{id}")]

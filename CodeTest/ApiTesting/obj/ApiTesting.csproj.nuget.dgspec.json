@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj": {}
+    "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj": {
+    "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj",
+        "projectUniqueName": "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj",
         "projectName": "ApiTesting",
-        "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj",
-        "packagesPath": "C:\\Users\\alist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\obj\\",
+        "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\ApiTesting.csproj",
+        "packagesPath": "C:\\Users\\Dvine\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\ApiTesting\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alist\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Dvine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,9 +32,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj": {
-                "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj"
+              "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj": {
+                "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj"
               }
             }
           }
@@ -41,6 +48,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -74,29 +82,32 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.4.21255.9\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj": {
+    "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj",
+        "projectUniqueName": "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj",
         "projectName": "CodeTest",
-        "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj",
-        "packagesPath": "C:\\Users\\alist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\obj\\",
+        "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\CodeTest.csproj",
+        "packagesPath": "C:\\Users\\Dvine\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dvine\\Documents\\GitHub\\CodeTest\\CodeTest\\CodeTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alist\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Dvine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -107,6 +118,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -118,6 +130,21 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNet.SignalR.Client": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -128,6 +155,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.14, 3.1.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -136,7 +169,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.4.21255.9\\RuntimeIdentifierGraph.json"
         }
       }
     }

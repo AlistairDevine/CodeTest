@@ -1,6 +1,7 @@
 ﻿using CodeTest.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CodeTest.Services
 {
@@ -14,5 +15,7 @@ namespace CodeTest.Services
         string GetAlbumsPhotos(int userId);
         IEnumerable<PhotoModel> GetPhotos();
         IEnumerable<string> GetUserById(int userId);
+        Task<AlbumModel[]> GetAlbumsUrl();
+        Task<PhotoModel[]> GetPhotosUrl();
     }
 }
