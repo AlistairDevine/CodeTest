@@ -11,6 +11,9 @@ namespace ApiTesting
     [Parallelizable(ParallelScope.Self)]
     public class AlbumIntegration : PlaywrightTest
     {
+        //Install playwright cli
+        //npx playwright-cli codegen --target=csharp
+
         [Test]
         public async Task VerifyAlbumsRoute()
         {
